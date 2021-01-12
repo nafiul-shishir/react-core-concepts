@@ -2,22 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  var person = {
-    name: "Mr. Nafiul Alam",
-    job: "Programmer"
-  }
+  const friend =['shishir','bishal'];
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <h1> {person.name + " " + person.job}</h1>
-        <p> My first React Paragraph</p>
-        <Person/>
-        <Person/>
-        <Person/>
+        <Person name="Munna" job="Footballer"></Person>
+        <Person name="Masub" job="Dorsok"></Person>
+        
         
       </header>
       
@@ -25,17 +17,15 @@ function App() {
   );
 }
 
-function Person(){
-  const personStyle= {
-    border: '2px solid lightgreen',
-    margin: '10px'
-  }
+function Person(props){
   return (
-    <div style={personStyle}>
-      <h1> Name: Sakib Al Hasan</h1>
-      <h3> Hero of the year</h3>
+    <div style={{boxShadow: '8px 12px 6px grey', width:'400px',padding:'20px'}}>
+      <h3>My Name: {props.name}</h3>
+      <p>My Profession {props.job}</p>
     </div>
   )
 }
+
+
 
 export default App;
